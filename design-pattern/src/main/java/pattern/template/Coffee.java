@@ -3,7 +3,7 @@ package pattern.template;
 /**
  * Coffee饮料特殊工艺实现
  */
-public class Coffee extends Drinks {
+public class Coffee extends AbstractDrinks {
 
     @Override
     void brew() {

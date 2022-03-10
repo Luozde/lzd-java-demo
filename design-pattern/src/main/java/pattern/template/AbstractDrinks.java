@@ -1,6 +1,6 @@
 package pattern.template;
 
-public abstract class Drinks {
+public abstract class AbstractDrinks {
     /**
      * 1. 把水煮沸
      */

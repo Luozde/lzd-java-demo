@@ -6,10 +6,10 @@ package pattern.template;
  */
 public class TestTemplateApp {
     public static void main(String[] args) {
-        Drinks coffee = new Coffee();
+        AbstractDrinks coffee = new Coffee();
         coffee.makingDrinks();
         System.out.println();
-        Drinks tea = new Tea();
+        AbstractDrinks tea = new Tea();
         tea.makingDrinks();
     }
 }
