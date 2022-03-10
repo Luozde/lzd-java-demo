@@ -1,5 +1,8 @@
 package template;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 /**
  *
  * @author lzd
@@ -28,5 +31,16 @@ public enum RedisConnectionType {
 
     public String getConnectionDesc() {
         return connectionDesc;
+    }
+
+    /**
+     * 判断是否属于该枚举类型
+     * @param connectionType
+     * @return
+     */
+    public static Boolean isConnectionType(String connectionType) {
+        Optional<RedisConnectionType> first = Arrays.stream(RedisConnectionType.values())
+                .filter(r -> r.getConnectionType() == connectionType).findFirst();
+        return first.isPresent() ? true : false;
     }
 }
