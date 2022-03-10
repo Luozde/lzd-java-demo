@@ -1,9 +1,8 @@
 # lzd-java-demo
 
-## 设计模式：
+## 常用模版
 
-- [模版方法](模式)
-- [策略模式](模式)
+- [枚举模版](./others/src/main/java/template/RedisConnectionType.java)
 
 ## 集合
 
