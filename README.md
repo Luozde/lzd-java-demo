@@ -7,3 +7,4 @@
 ## 集合
 
 - [Map案例](./others/src/main/java/collect/MapDemo.java)
+- [Set案例](./others/src/main/java/collect/SetDemo.java)
