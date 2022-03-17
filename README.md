@@ -8,5 +8,5 @@
 
 - [Map案例](./others/src/main/java/collect/MapDemo.java)
 - [Set案例](./others/src/main/java/collect/SetDemo.java)
-- [Steam案例](./notes/notes/java/stream.md)
+- [Steam案例](./notes/java/stream.md)
 
