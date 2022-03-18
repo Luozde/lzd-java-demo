@@ -35,4 +35,4 @@ System.out.println(JSON.toJSON(map));
 
 
 
-> [Stream示例代码](./others/src/main/java/collect/Stream.java)
+> [Stream示例代码](../../others/src/main/java/collect/Stream.java)
