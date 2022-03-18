@@ -21,22 +21,18 @@ studentList.stream()
 ## 根据字段对list进行分组
 
 ```java
-List<Score> scoreList = new ArrayList<>();
-scoreList.add(new Score("001", "2018", 100.0));
-scoreList.add(new Score("001", "2019", 59.5));
-scoreList.add(new Score("001", "2019", 99.0));
-scoreList.add(new Score("002", "2018", 199.6));
-
-// 根据scoreYear字段进行分组
+// 根据scoreYear字段进行分组(单字段)
 Map<String, List<Score>> map = scoreList.stream().collect(
         Collectors.groupingBy(
                 score -> score.getScoreYear()
         ));
-System.out.println(JSON.toJSON(map));
+
+// 根据scoreYear和studentId字段进行分组(多字段拼接)
+Map<String, List<Score>> map = scoreList.stream().collect(
+        Collectors.groupingBy(
+                score -> score.getScoreYear()+'-'+score.getStudentId()
+        ));
 ```
-
-
-
 
 
 > [Stream示例代码](../../others/src/main/java/collect/Stream.java)
