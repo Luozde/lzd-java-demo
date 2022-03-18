@@ -5,13 +5,17 @@
 - 升序
 
 ```java
-studentList.stream().sorted(Comparator.comparing(StudentInfo::getAge)).collect(Collectors.toList());
+studentList.stream()
+        .sorted(Comparator.comparing(StudentInfo::getAge))
+        .collect(Collectors.toList());
 ```
 
 - 降序
 
 ```java
-studentList.stream().sorted(Comparator.comparing(StudentInfo::getAge).reversed()).collect(Collectors.toList());
+studentList.stream()
+        .sorted(Comparator.comparing(StudentInfo::getAge).reversed())
+        .collect(Collectors.toList());
 ```
 
 ## 根据字段对list进行分组
