@@ -1,4 +1,4 @@
-package reflection;
+package com.luozd.demo.reflection;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -13,7 +13,7 @@ public class ReflectionDemo {
         /**
          * 获取 TargetObject 类的 Class 对象并且创建 TargetObject 类实例
          */
-        Class<?> targetClass = Class.forName("reflection.TargetObject");
+        Class<?> targetClass = Class.forName("com.luozd.demo.reflection.TargetObject");
         TargetObject targetObject = (TargetObject) targetClass.newInstance();
         /**
          * 获取 TargetObject 类中定义的所有方法

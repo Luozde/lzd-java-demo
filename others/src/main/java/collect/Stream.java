@@ -1,7 +1,7 @@
 package collect;
 
 import com.alibaba.fastjson.JSON;
-import entity.Score;
+import com.luozd.demo.entity.Score;
 
 import java.util.ArrayList;
 import java.util.List;

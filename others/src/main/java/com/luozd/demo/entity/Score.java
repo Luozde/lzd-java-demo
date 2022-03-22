@@ -1,4 +1,4 @@
-package entity;
+package com.luozd.demo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
