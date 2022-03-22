@@ -11,7 +11,7 @@
     <modules>
         <module>design-pattern</module>
         <module>spring-statemachine</module>
-        <module>spring-aop</module>
+        <module>springboot-globalexception</module>
     </modules>
 
     <properties>
