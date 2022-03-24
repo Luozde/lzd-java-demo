@@ -22,3 +22,7 @@
 ## 项目创建
 
 - [SpringBoot项目创建](./notes/java/SpringBoot项目创建.md)
+
+## 其他
+
+- [hr-ws演示案例](./notes/java/temp.md)
