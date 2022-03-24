@@ -9,15 +9,17 @@
 
 2. 注册一个业务域为d1，所属组为g1的客户端c1，并连接服务ws1
 
-`ws://10.173.211.130:8081/ws?clientId=c1&bizCode=d1&token=456&group=g1`
+```
+ws://10.173.211.130:8081/ws?clientId=c1&bizCode=d1&token=456&group=g1
+```
 
 3. 注册一个业务域为d1，所属组为g2的客户端c2，并连接服务ws2
 
-`ws://10.173.211.130:8082/ws?clientId=c2&bizCode=d1&token=456&group=g2`
+```ws://10.173.211.130:8082/ws?clientId=c2&bizCode=d1&token=456&group=g2```
 
 4. 注册一个业务域为d1，所属组为g1的客户端c3，并连接服务ws2
 
-`ws://10.173.211.130:8082/ws?clientId=c3&bizCode=d1&token=456&group=g1`
+```ws://10.173.211.130:8082/ws?clientId=c3&bizCode=d1&token=456&group=g1```
 
 5. 通过c1客户端发送单播消息给c2
 
@@ -39,19 +41,19 @@
 
 2. 注册一个业务域为d1，所属组为g1的客户端c1，并连接服务ws1
 
-`ws://10.173.211.130:8081/ws?bizCode=d1&clientId=c1&group=g1&token=456`
+```ws://10.173.211.130:8081/ws?bizCode=d1&clientId=c1&group=g1&token=456```
 
 3. 注册一个业务域为d1，所属组为g2的客户端c2，并连接服务ws2
 
-`ws://10.173.211.130:8082/ws?bizCode=d1&clientId=c2&group=g2&token=456`
+```ws://10.173.211.130:8082/ws?bizCode=d1&clientId=c2&group=g2&token=456```
 
 4. 注册一个业务域为d1，所属组为g1的客户端c3，并连接服务ws2
 
-`ws://10.173.211.130:8082/ws?bizCode=d1&clientId=c3&group=g1&token=456`
+```ws://10.173.211.130:8082/ws?bizCode=d1&clientId=c3&group=g1&token=456```
 
 5. 注册一个业务域为d1，所属组为g1，g2的客户端c4，并连接服务ws3
 
-`ws://10.173.211.130:8082/ws?bizCode=d1&clientId=c4&group=g1,g2&token=456`
+```ws://10.173.211.130:8082/ws?bizCode=d1&clientId=c4&group=g1,g2&token=456```
 
 6. 通过c1客户端发送组播消息给组g1
 
@@ -72,23 +74,23 @@
 
 2. 注册一个业务域为d1，所属组为g1的客户端c1，并连接服务ws1
 
-`ws://10.173.211.130:8081/ws?bizCode=d1&group=g1&clientId=c1&token=456`
+```ws://10.173.211.130:8081/ws?bizCode=d1&group=g1&clientId=c1&token=456```
 
 3. 注册一个业务域为d1，所属组为g2的客户端c2，并连接服务ws2
 
-`ws://10.173.211.130:8082/ws?bizCode=d1&group=g2&clientId=c2&token=456`
+```ws://10.173.211.130:8082/ws?bizCode=d1&group=g2&clientId=c2&token=456```
 
 4. 注册一个业务域为d1，所属组为g1的客户端c3，并连接服务ws2
 
-`ws://10.173.211.130:8082/ws?bizCode=d1&group=g1&clientId=c3&token=456`
+```ws://10.173.211.130:8082/ws?bizCode=d1&group=g1&clientId=c3&token=456```
 
 5. 注册一个业务域为d1，所属组为g1，g2的客户端c4，并连接服务ws3
 
-`ws://10.173.211.130:8082/ws?bizCode=d1&group=g1,g2&clientId=c4&token=456`
+```ws://10.173.211.130:8082/ws?bizCode=d1&group=g1,g2&clientId=c4&token=456```
 
 6. 注册一个业务域为d2，所属组为g1，g2的客户端c5，并连接服务ws3
 
-`ws://10.173.211.130:8083/ws?bizCode=d2&group=g1,g2&clientId=c5&token=456`
+```ws://10.173.211.130:8083/ws?bizCode=d2&group=g1,g2&clientId=c5&token=456```
 
 7. 通过c1客户端发送广播消息
 ```json
@@ -107,7 +109,7 @@
 1. 提前准备nginx环境，redis环境，websocket集群服务（ws1-ws3三个实例）
 2. 注册一个客户端到nginx的ws代理地址
 
-`ws://10.173.211.130:8080/ws?bizCode=d1&group=g1&clientId=c1&token=456`
+```ws://10.173.211.130:8080/ws?bizCode=d1&group=g1&clientId=c1&token=456```
 
 3. 配置客户端定时发送心跳消息
 ```json
