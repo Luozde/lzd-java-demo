@@ -23,6 +23,10 @@
 
 - [SpringBoot项目创建](./notes/java/SpringBoot项目创建.md)
 
+## 工具类
+
+- [工具类集锦](./notes/util/readme.md)
+
 ## 其他
 
 - [hr-ws演示案例](./notes/java/temp.md)
