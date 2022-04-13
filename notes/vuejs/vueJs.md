@@ -16,3 +16,10 @@ async connectTest() {
     })
 }
 ```
+
+## 常用处理
+
+删除数组中符合条件的元素
+```js
+this.currentNode = this.currentNode.filter(t => t.id != currentNodeId)
+```
