@@ -66,8 +66,38 @@ class Test {
 }
 ```
 > 效果：
->
-> ![转化效果](./images/stream/stream_1.png)
+```json
+{
+    "1":{
+        "m":{
+            "id":"1",
+            "mainId":"1",
+            "name":"a",
+            "sex":"m"
+        },
+        "f":{
+            "id":"3",
+            "mainId":"1",
+            "name":"c",
+            "sex":"f"
+        }
+    },
+    "2":{
+        "m":{
+            "id":"5",
+            "mainId":"2",
+            "name":"e",
+            "sex":"m"
+        },
+        "f":{
+            "id":"4",
+            "mainId":"2",
+            "name":"d",
+            "sex":"f"
+        }
+    }
+}
+```
 
 ## 格式化专用
 ```java
