@@ -13,11 +13,13 @@ import java.util.stream.Collectors;
 
 public class Stream {
     public static void main(String[] args) {
-        listToMap();
+        listGroupingByKey();
+        listGroupingByKey2();
     }
 
     /**
-     * 根据一个字段对list进行分组
+     * list 转 map: 根据一个字段对list进行分组
+     * 利用原生实现
      */
     static void listGroupingByKey() {
         List<Score> scoreList = new ArrayList<>();
@@ -34,14 +36,33 @@ public class Stream {
         System.out.println(JSON.toJSON(map));
     }
 
+    /**
+     * list 转 map: 根据一个字段对list进行分组
+     * 手动实现
+     * 输出结果：Map<mainId, List<Student>>
+     */
+    static void listGroupingByKey2(){
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("1", "1", "a", "m"));
+        students.add(new Student("2", "1", "b", "f"));
+        students.add(new Student("3", "1", "c", "f"));
+        students.add(new Student("4", "2", "d", "f"));
+        students.add(new Student("5", "2", "e", "m"));
+
+        Map<String, List<Student>> mainIdMap = students.stream().collect(Collectors.toMap(Student::getMainId, s -> {
+            List<Student> sexList = new ArrayList<>();
+            sexList.add(s);
+            return sexList;
+        }, (v1, v2) -> {
+            v1.addAll(v2);
+            return v1;
+        }));
+
+        System.out.println(JSONObject.toJSONString(mainIdMap));
+    }
+
     // list 转 map
-    // 如：
-    // id=1, mainId= 1, name=a, sex=1
-    // id=2, mainId= 1, name=b, sex=2
-    // id=3, mainId= 1, name=c, sex=2
-    // id=4, mainId= 2, name=d, sex=1
-    // id=5, mainId= 2, name=e, sex=2
-    // 输出结果：Map<mainId, Map<sex, obj>>, 如果存在重复则覆盖
+    // 输出结果：Map<mainId, Map<sex, Student>>, 如果存在重复则覆盖
     //
     static void listToMap() {
         List<Student> students = new ArrayList<>();
@@ -64,6 +85,9 @@ public class Stream {
         System.out.println(JSONObject.toJSONString(mainIdMap));
 
     }
+
+
+
 }
 
 

@@ -22,8 +22,8 @@ studentList.stream()
 
 ```java
 class Test {
-    void test() {
-        // 根据scoreYear字段进行分组(单字段)
+    void test1() {
+        // list 转 map: 根据scoreYear字段进行分组(单字段)
         Map<String, List<Score>> map = scoreList.stream().collect(
                 Collectors.groupingBy(
                         score -> score.getScoreYear()
@@ -35,9 +35,35 @@ class Test {
                         score -> score.getScoreYear() + '-' + score.getStudentId()
                 ));
     }
+
+    /**
+     * list 转 map: 根据一个字段对list进行分组
+     * 手动实现
+     * 输出结果：Map<mainId, List<Student>>
+     */
+    static void listGroupingByKey2(){
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("1", "1", "a", "m"));
+        students.add(new Student("2", "1", "b", "f"));
+        students.add(new Student("3", "1", "c", "f"));
+        students.add(new Student("4", "2", "d", "f"));
+        students.add(new Student("5", "2", "e", "m"));
+
+        Map<String, List<Student>> mainIdMap = students.stream().collect(Collectors.toMap(Student::getMainId, s -> {
+            List<Student> sexList = new ArrayList<>();
+            sexList.add(s);
+            return sexList;
+        }, (v1, v2) -> {
+            v1.addAll(v2);
+            return v1;
+        }));
+
+        System.out.println(JSONObject.toJSONString(mainIdMap));
+    }
 }
 
 ```
+
 
 ```java
 /**
