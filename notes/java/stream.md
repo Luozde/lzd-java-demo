@@ -21,18 +21,61 @@ studentList.stream()
 ## 根据字段对list进行分组
 
 ```java
-// 根据scoreYear字段进行分组(单字段)
-Map<String, List<Score>> map = scoreList.stream().collect(
-        Collectors.groupingBy(
-                score -> score.getScoreYear()
-        ));
+class Test {
+    void test() {
+        // 根据scoreYear字段进行分组(单字段)
+        Map<String, List<Score>> map = scoreList.stream().collect(
+                Collectors.groupingBy(
+                        score -> score.getScoreYear()
+                ));
 
-// 根据scoreYear和studentId字段进行分组(多字段拼接)
-Map<String, List<Score>> map = scoreList.stream().collect(
-        Collectors.groupingBy(
-                score -> score.getScoreYear()+'-'+score.getStudentId()
-        ));
+        // 根据scoreYear和studentId字段进行分组(多字段拼接)
+        Map<String, List<Score>> map = scoreList.stream().collect(
+                Collectors.groupingBy(
+                        score -> score.getScoreYear() + '-' + score.getStudentId()
+                ));
+    }
+}
+
 ```
 
+```java
+/**
+ * list 转 map
+ * 实现输出结果：list -> Map<mainId, Map<sex, obj>>, 如果存在重复则覆盖
+ */
+class Test {
+    void test() {
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("1", "1", "a", "m"));
+        students.add(new Student("2", "1", "b", "f"));
+        students.add(new Student("3", "1", "c", "f"));
+        students.add(new Student("4", "2", "d", "f"));
+        students.add(new Student("5", "2", "e", "m"));
+
+        Map<String, Map<String, Student>> mainIdMap = students.stream()
+                .collect(Collectors.toMap(Student::getMainId, s -> {
+                    Map<String, Student> sexMap = new HashMap<>(2);
+                    sexMap.put(s.getSex(), s);
+                    return sexMap;
+                }, (v1, v2) -> {
+                    v1.putAll(v2);
+                    return v1;
+                }));
+    }
+}
+```
+> 效果：
+>
+> ![转化效果](./images/stream/stream_1.png)
+
+## 格式化专用
+```java
+class Test {
+    void test() {
+
+    }
+}
+```
 
 > [Stream示例代码](../../others/src/main/java/collect/Stream.java)
