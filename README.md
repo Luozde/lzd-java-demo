@@ -6,7 +6,7 @@
 
 ## 集合
 
-- [Map案例](./others/src/main/java/collect/MapDemo.java)
+- [Map案例](./others/src/main/java/collect/MapDemo.java) | [Map集合笔记](./notes/java/集合/map集合.md)
 - [Set案例](./others/src/main/java/collect/SetDemo.java)
 - [Steam案例](./notes/java/stream.md)
 

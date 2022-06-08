@@ -1,6 +1,7 @@
 package collect;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sun.tools.javac.util.StringUtils;
 import jdk.nashorn.api.scripting.JSObject;
 
 import java.util.HashMap;
@@ -15,7 +16,9 @@ import java.util.stream.Collectors;
 public class MapDemo {
 
     public static void main(String[] args) {
-        filterMap();
+        // filterMap();
+
+        visitMap();
     }
 
     /**
@@ -37,5 +40,17 @@ public class MapDemo {
                 .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
         System.out.println(JSONObject.toJSONString(zMapList));
 
+    }
+
+    /**
+     * map遍历键值对
+     */
+    private static void visitMap(){
+        Map<String, String> map = new HashMap<>(2);
+        map.put("1","1");
+        map.put("2","2");
+        map.forEach((k,v)->{
+            System.out.println(k + "_" + v);
+        });
     }
 }
