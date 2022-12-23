@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  redis-cluster-1:
+    image: registry.cn-hangzhou.aliyuncs.com/zhengqing/redis:6.0.8                                  # 镜像'redis:6.0.8'
+    container_name: redis-cluster-1                                                                 # 容器名为'redis-cluster'
+    hostname: redis-cluster-1
+    restart: unless-stopped                                                                         # 指定容器退出后的重启策略为始终重启，但是不考虑在Docker守护进程启动时就已经停止了的容器
+    command: redis-server /etc/redis/redis.conf --port 6380 --requirepass 123456 --appendonly no  # 启动redis服务并添加密码为：hgrica1@,默认不开启redis-aof方式持久化配置,连接并认证master节点
+    environment:                        # 设置环境变量,相当于docker run命令中的-e
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+    volumes:                            # 数据卷挂载路径设置,将本机目录映射到容器目录
+      - "./data:/data"                  # 自动生成
+      - "./config/redis.conf:/etc/redis/redis.conf"  # `redis.conf`文件内容`http://download.redis.io/redis-stable/redis.conf`
+    ports:                              # 映射端口
+        - "6380:6380"
+        - "16380:16380"
+    # 定义hosts
+    extra_hosts:
+      - "redis-cluster-1:10.173.211.176"
+      - "redis-cluster-2:10.173.211.177"
+
+  redis-cluster-2:
+    image: registry.cn-hangzhou.aliyuncs.com/zhengqing/redis:6.0.8                                  # 镜像'redis:6.0.8'
+    container_name: redis-cluster-1                                                                 # 容器名为'redis-cluster'
+    hostname: redis-cluster-1
+    restart: unless-stopped                                                                         # 指定容器退出后的重启策略为始终重启，但是不考虑在Docker守护进程启动时就已经停止了的容器
+    command: redis-server /etc/redis/redis.conf --port 6380 --requirepass 123456 --appendonly no  # 启动redis服务并添加密码为：hgrica1@,默认不开启redis-aof方式持久化配置,连接并认证master节点
+    environment: # 设置环境变量,相当于docker run命令中的-e
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+    volumes: # 数据卷挂载路径设置,将本机目录映射到容器目录
+      - "./data:/data"                  # 自动生成
+      - "./config/redis.conf:/etc/redis/redis.conf"  # `redis.conf`文件内容`http://download.redis.io/redis-stable/redis.conf`
+    # 定义hosts
+    extra_hosts:
+      - "redis-cluster-1:10.173.211.176"
+      - "redis-cluster-2:10.173.211.177"
+    # 网络模式：host,即为使用宿主机网络
+    network_mode: host

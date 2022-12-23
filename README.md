@@ -15,9 +15,10 @@
 
 - [MybatisPlus](./notes/mybatis-plus/mybatis-plus.md)
 
-## vueJs
+## 前端front
 
-- [VueJs](./notes/vuejs/vueJs.md)
+- [VueJs](./notes/front/vuejs/vueJs.md)
+- [js常用工具方法](./notes/front/js/js常用工具方法.md)
 
 ## 项目创建
 
