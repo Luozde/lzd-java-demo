@@ -32,6 +32,3 @@
 
 - [单元测试](./notes/java/单元测试.md)
 
-## 其他
-
-- [hr-ws演示案例](./notes/java/temp.md)
