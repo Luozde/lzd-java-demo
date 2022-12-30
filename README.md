@@ -32,6 +32,9 @@
 
 - [单元测试](./notes/java/单元测试.md)
 
+## 运维
+- [nginx分模块配置指导](./notes/ops/nginx/nginx分模块配置指导.md)
+
 ## 其他
 
 - [牛客网刷题必备](./notes/刷题必备/牛客网刷题必备.md)
