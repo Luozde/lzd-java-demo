@@ -34,6 +34,7 @@
 
 ## 运维
 - [nginx分模块配置指导](./notes/ops/nginx/nginx分模块配置指导.md)
+- [Docker配置指导](./notes/ops/docker/docker配置指导.md)
 
 ## 其他
 
