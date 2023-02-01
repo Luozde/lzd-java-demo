@@ -1,5 +1,23 @@
 # docker-compose 基础
 
+## 下载安装
+
+```bash
+# 查看版本
+docker-compose version
+
+# 下载docker-compose至/usr/local/bin/
+[版本清单](https://github.com/docker/compose/tags)
+
+curl -L "https://github.com/docker/compose/releases/download/v2.13.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# 添加执行权限
+chmod +x /usr/local/bin/docker-compose
+
+```
+
+
+
 ## 常用命令
 
 ```bash
